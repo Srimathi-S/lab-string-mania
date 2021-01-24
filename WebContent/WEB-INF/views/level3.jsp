@@ -19,7 +19,7 @@
             <p>Choose an operation you'd like to perform on your string</p><br>
             <input type="checkbox" name="concatenation" > CONCATENATE &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
             <input type="checkbox" name="split"> SPLIT &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;
-            <input type="checkbox" name="indexof"> INDEXOF 
+            <input type="checkbox" name="indexOf"> INDEXOF 
             <br> <input type="submit" name="seeanswer" id="sa"
 				value="See Answer"><br>
 			 <input type="text" class="form-text" id="string"

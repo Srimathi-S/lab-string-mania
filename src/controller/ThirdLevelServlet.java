@@ -37,8 +37,6 @@ public class ThirdLevelServlet extends HttpServlet {
 				String output = stringadvance.concat(input1, input2);
 				// System.out.println(output);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
-				rd.forward(request, response);
 			}
 		}
 
@@ -46,20 +44,21 @@ public class ThirdLevelServlet extends HttpServlet {
 			if (split != null) {
 				String output = stringadvance.split(input1, input2);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
-				rd.forward(request, response);
 			}
 		}
 
 		if (seeAnswer != null) {
 			if (indexOf != null) {
 				String output = stringadvance.indexOf(input1, input2);
+				System.out.println(output);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
-				rd.forward(request, response);
 			}
 		}
-
+		if(seeAnswer!=null)
+		{
+			RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
+			rd.forward(request, response);
+		}
 		if (end != null) {
 			response.setContentType("text/html");
 			out.println("<script type=\"text/javascript\">");

@@ -39,8 +39,6 @@ public class SecondLevelServlet extends HttpServlet {
 				boolean output = stringboolean.contains(input1, input2);
 				System.out.println(output);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level2.jsp");
-				rd.forward(request, response);
 			}
 		}
 
@@ -48,8 +46,6 @@ public class SecondLevelServlet extends HttpServlet {
 			if (endsWith != null) {
 				boolean output = stringboolean.endsWith(input1, input2);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level2.jsp");
-				rd.forward(request, response);
 			}
 		}
 
@@ -57,8 +53,6 @@ public class SecondLevelServlet extends HttpServlet {
 			if (startsWith != null) {
 				boolean output = stringboolean.startsWith(input1, input2);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level2.jsp");
-				rd.forward(request, response);
 			}
 		}
 
@@ -75,11 +69,13 @@ public class SecondLevelServlet extends HttpServlet {
 			if (equalsIgnoreCase != null) {
 				boolean output = stringboolean.equalsIgnoreCase(input1, input2);
 				request.setAttribute("output", output);
-				RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level2.jsp");
-				rd.forward(request, response);
 			}
 		}
-
+		if(seeAnswer!=null)
+		{
+			RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level2.jsp");
+			rd.forward(request, response);
+		}
 		if (thirdLevel != null) {
 			RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/WEB-INF/views/level3.jsp");
 			rd.forward(request, response);
